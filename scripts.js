@@ -9,6 +9,10 @@ window.addEventListener("load", function() {
         if (response) {
             let flightStatus = document.getElementById("flightStatus");
             flightStatus.innerHTML = "Shuttle in flight.";
+            let shuttleBackground = document.getElementById("shuttleBackground");
+            shuttleBackground.style.backgroundColor = "blue";
+            let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
+            spaceShuttleHeight.innerHTML = 10000;
         }
     });
 });
