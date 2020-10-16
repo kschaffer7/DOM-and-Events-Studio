@@ -18,12 +18,25 @@ window.addEventListener("load", function() {
     // "Land" button events
     let land = document.getElementById("landing");
     land.addEventListener("click", function (event) {
-        let response = window.alert("The shuttle is landing. Landing gear engaged.");
+        window.alert("The shuttle is landing. Landing gear engaged.");
         let flightStatus = document.getElementById("flightStatus");
         flightStatus.innerHTML = "The shuttle has landed.";
         let shuttleBackground = document.getElementById("shuttleBackground");
         shuttleBackground.style.backgroundColor = "green";
         let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
         spaceShuttleHeight.innerHTML = 0;
+    });
+    // "Abort Mission" button events
+    let missionAbort = document.getElementById("missionAbort");
+    missionAbort.addEventListener("click", function (event) {
+        let response = window.confirm("Confirm that you want to abort the mission.");
+        if (response) {
+            let flightStatus = document.getElementById("flightStatus");
+            flightStatus.innerHTML = "Mission aborted.";
+            let shuttleBackground = document.getElementById("shuttleBackground");
+            shuttleBackground.style.backgroundColor = "green";
+            let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
+            spaceShuttleHeight.innerHTML = 0;
+        }
     });
 });
