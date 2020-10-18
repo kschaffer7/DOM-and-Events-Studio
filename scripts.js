@@ -39,4 +39,16 @@ window.addEventListener("load", function() {
             spaceShuttleHeight.innerHTML = 0;
         }
     });
+    // Move rocket image up
+    // How to add an event listener to a button that does not have an id
+    let allButtons = document.getElementsByTagName("button");
+    let moveUp = allButtons[0];
+    moveUp.addEventListener("click", function (event) {
+        let rocket = document.getElementById = "rocket"
+        console.log(rocket.height);
+    });
+    // let moveDown = allButtons[1];
+    // let moveRight = allButtons[2];
+    // let moveLeft = allButtons[3];
+    
 });
