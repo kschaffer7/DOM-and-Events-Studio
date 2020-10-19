@@ -4,17 +4,16 @@ window.addEventListener("load", function() {
     let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
     let flightStatus = document.getElementById("flightStatus");
     let shuttleBackground = document.getElementById("shuttleBackground");
-    console.log(shuttleBackground.style.width);
     // "Take off" button events
     let takeOff = document.getElementById("takeoff");
     takeOff.addEventListener("click", function (event) {
         // console.log("Take off")
         // console.log(event);
-        let response = window.confirm("Confirm that the shuttle is ready for takeoff.");
-        if (response) {
+        let confirm = window.confirm("Confirm that the shuttle is ready for takeoff.");
+        if (confirm) {
             flightStatus.innerHTML = "Shuttle in flight.";
             shuttleBackground.style.backgroundColor = "blue";
-            spaceShuttleHeight.innerHTML = 10000;
+            spaceShuttleHeight.innerHTML = 10000; //No need to increment, can only take off once!!!
         }
     });
     // "Land" button events
@@ -28,8 +27,8 @@ window.addEventListener("load", function() {
     // "Abort Mission" button events
     let missionAbort = document.getElementById("missionAbort");
     missionAbort.addEventListener("click", function (event) {
-        let response = window.confirm("Confirm that you want to abort the mission.");
-        if (response) {
+        let confirm = window.confirm("Confirm that you want to abort the mission.");
+        if (confirm) {
             flightStatus.innerHTML = "Mission aborted.";
             shuttleBackground.style.backgroundColor = "green";
             spaceShuttleHeight.innerHTML = 0;
