@@ -1,5 +1,10 @@
 window.addEventListener("load", function() {
     console.log('window loaded');
+    // declare global variables
+    let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
+    let flightStatus = document.getElementById("flightStatus");
+    let shuttleBackground = document.getElementById("shuttleBackground");
+    console.log(shuttleBackground.style.width);
     // "Take off" button events
     let takeOff = document.getElementById("takeoff");
     takeOff.addEventListener("click", function (event) {
@@ -7,11 +12,8 @@ window.addEventListener("load", function() {
         // console.log(event);
         let response = window.confirm("Confirm that the shuttle is ready for takeoff.");
         if (response) {
-            let flightStatus = document.getElementById("flightStatus");
             flightStatus.innerHTML = "Shuttle in flight.";
-            let shuttleBackground = document.getElementById("shuttleBackground");
             shuttleBackground.style.backgroundColor = "blue";
-            let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
             spaceShuttleHeight.innerHTML = 10000;
         }
     });
@@ -19,11 +21,8 @@ window.addEventListener("load", function() {
     let land = document.getElementById("landing");
     land.addEventListener("click", function (event) {
         window.alert("The shuttle is landing. Landing gear engaged.");
-        let flightStatus = document.getElementById("flightStatus");
         flightStatus.innerHTML = "The shuttle has landed.";
-        let shuttleBackground = document.getElementById("shuttleBackground");
         shuttleBackground.style.backgroundColor = "green";
-        let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
         spaceShuttleHeight.innerHTML = 0;
     });
     // "Abort Mission" button events
@@ -31,11 +30,8 @@ window.addEventListener("load", function() {
     missionAbort.addEventListener("click", function (event) {
         let response = window.confirm("Confirm that you want to abort the mission.");
         if (response) {
-            let flightStatus = document.getElementById("flightStatus");
             flightStatus.innerHTML = "Mission aborted.";
-            let shuttleBackground = document.getElementById("shuttleBackground");
             shuttleBackground.style.backgroundColor = "green";
-            let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
             spaceShuttleHeight.innerHTML = 0;
         }
     });
@@ -43,7 +39,7 @@ window.addEventListener("load", function() {
     // Assign a 'position: absolute' for "rocket" and center
     let rocket = document.getElementById("rocket");
     rocket.style.position = "absolute";
-    rocket.style.bottom = 0;
+    rocket.style.bottom = "0px";
     rocket.style.left = "178px";
     let bottom = rocket.style.bottom;
     bottom = bottom.replace("px","");
@@ -55,7 +51,7 @@ window.addEventListener("load", function() {
     moveUp.addEventListener("click", function (event) {
         bottom = Number(bottom) + 10;
         rocket.style.bottom = bottom + "px";
-        let spaceShuttleHeight = document.getElementById("spaceShuttleHeight").innerHTML;
+        spaceShuttleHeight = document.getElementById("spaceShuttleHeight").innerHTML;
         spaceShuttleHeight = Number(spaceShuttleHeight) + 10000;
         document.getElementById("spaceShuttleHeight").innerHTML = spaceShuttleHeight;
     });
